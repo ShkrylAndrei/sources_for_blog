@@ -1,13 +1,20 @@
 package shkryl.info;
 
 import info.shkryl.entity.AddressBook;
-import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.annotations.QueryHints;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import javax.persistence.*;
-
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -118,26 +125,27 @@ public class TestCrudEntity {
         String queryStringAfterDelete = "SELECT a FROM AddressBook a WHERE a.id=:id";
         Query queryAfterDelete = em.createQuery(queryStringAfterDelete);
         queryAfterDelete.setParameter("id", idDeleteEntity);
-        AddressBook entityFromDbAfterDelete=null;
+        AddressBook entityFromDbAfterDelete = null;
         try {
             entityFromDbAfterDelete = (AddressBook) queryAfterDelete.getSingleResult();
-        }catch (NoResultException e){
+        } catch (NoResultException e) {
             log.info("No record found in DataBase");
         }
 
         Assertions.assertNull(entityFromDbAfterDelete);
     }
 
-    AddressBook addRecordToAddressBook(){
+    AddressBook addRecordToAddressBook() {
         em.getTransaction().begin();
+
         AddressBook addressBook = new AddressBook();
         addressBook.setFullName("Иванов Иван Иванович");
         addressBook.setPhoneNumber("+7 987 654 1234");
         addressBook.setDescription("Водитель");
 
-        Assertions.assertFalse(em.contains(addressBook));
         em.persist(addressBook);
+
         em.getTransaction().commit();
-        return  addressBook;
+        return addressBook;
     }
 }
