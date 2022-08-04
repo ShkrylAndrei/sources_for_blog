@@ -6,9 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class SequencePrimaryKey {
-    //TODO поменять название таблицы
-    //TODO и добавлять две записи, в  таблицу погода
+public class MainSequencePrimaryKey {
     public static void main(String[] args) {
         EntityManagerFactory emFactory = null;
         EntityManager em = null;

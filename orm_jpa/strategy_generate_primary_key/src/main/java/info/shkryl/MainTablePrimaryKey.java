@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class TablePrimaryKey {
+public class MainTablePrimaryKey {
     public static void main(String[] args) {
         EntityManagerFactory emFactory = null;
         EntityManager em = null;

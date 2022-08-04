@@ -1,8 +1,6 @@
 package info.shkryl.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,12 +13,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "address_book")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class AddressBook {
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="element_sequence")
-    @SequenceGenerator(name="element_sequence",sequenceName="element_sequence_for_table_address_book",allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "element_sequence")
+    @SequenceGenerator(name = "element_sequence", sequenceName = "element_sequence_for_table_address_book", allocationSize = 1)
     private Integer id;
 
     @Column(name = "full_name", length = 200, nullable = false)
