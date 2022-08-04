@@ -5,18 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>info.shkryl</groupId>
-    <artifactId>addressBookLifecycleCrud</artifactId>
+    <artifactId>StrategyGeneratePrimaryKey</artifactId>
     <version>0.0.1</version>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <hibernate.version>5.6.9.Final</hibernate.version>
         <postgresql.version>42.3.3</postgresql.version>
-        <h2.version>2.1.214</h2.version>
         <lombook.version>1.18.24</lombook.version>
-        <junit.version>5.6.2</junit.version>
     </properties>
 
     <dependencies>
@@ -31,20 +29,11 @@
             <version>${postgresql.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>${h2.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombook.version}</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>${junit.version}</version>
-        </dependency>
     </dependencies>
+
 </project>

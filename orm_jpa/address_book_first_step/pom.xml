@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>info.shkryl</groupId>
-    <artifactId>address_book_first_step</artifactId>
+    <artifactId>addressBookFirstStep</artifactId>
     <version>0.0.1</version>
 
     <properties>
